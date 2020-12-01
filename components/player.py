@@ -26,8 +26,8 @@ class Player(pygame.sprite.Sprite):
         key = pygame.key.get_pressed()
         if key[pygame.K_LEFT]:
                 self.rect.x -=5
-        if self.rect.left >= SCREEN_WIDHT:
-                self.rect.left = SCREEN_WIDHT
+        if self.rect.left <= 0:
+                self.rect.left = 0
 
 
 
