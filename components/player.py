@@ -16,7 +16,8 @@ class Player(pygame.sprite.Sprite):
         self.image.fill(GREEN)
         self.rect = self.image.get_rect()
         self.rect.centerx = SCREEN_WIDHT/2
-        self.rect.centery = SCREEN_HEIGHT/2
+        self.rect.centery = SCREEN_HEIGHT -10
+        self.bullets = pygame.sprite.Group()
 
 
     def update(self):
