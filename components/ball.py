@@ -4,9 +4,11 @@ import random
 from utils.constants import (
     BLUE,
     SCREEN_HEIGHT,
-    SCREEN_WIDHT,
+    SCREEN_WIDHT
 )
+
 allowed_speed = list(range(3,7))
+
 
 class Ball(pygame.sprite.Sprite):
     def __init__(self):
@@ -28,4 +30,12 @@ class Ball(pygame.sprite.Sprite):
         if self.rect.left < 0:
             self.rect.left= 0
             self.speedx = random.choice(allowed_speed)
+
+        if self.rect.bottom > SCREEN_HEIGHT:
+            self.rect.bottom = SCREEN_HEIGHT
+            self.speedy = random.choice(allowed_speed) * -1
+
+        if self.rect.top < 0:
+            self.rect.top = 0
+            self.speedy = random.choice(allowed_speed) + 1
 
